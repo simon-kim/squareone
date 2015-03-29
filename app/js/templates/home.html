@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Coding Challenge</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/hover-min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+  <div class="animated rollIn" ng-show="!showme">
+
+    <form name="mainForm" class="form-inline" data-ng-submit="submit()">
+      <div class="form-group" ng-class="{error: isInvalid('name')}">
+        <label class="label-main">Name: </label>
+        <input type="text" name="name" placeholder="e.g., Simon Kim" data-ng-model="user.Name" class="form-main" required>
+      </div>
+      <button type="submit" class="btn btn-main btn-primary hvr-buzz-out" ng-click="showme = !showme">Save <span class="glyphicon glyphicon-ok"></span></button>
+      <br>
+      <span ng-show="isInvalid('name')" class="invalid-inline">Name is required</span>
+      <span ng-show="isValid('name')" class="valid-inline">Great!</span>
+    </form>
+
+  </div>
+
+  <div class="animated rollIn" ng-show="showme">
+
+    <form class="form-inline">
+	     <div class="form-group">
+         <div data-ng-repeat="user in users">
+           <label class="label-main">Name: {{ user.Name }}</label>
+         </div>
+	      </div>
+        <button class="btn btn-main btn-primary hvr-buzz-out" ng-click="showme = !showme; formReset()" ng-disable="!change()">Edit <span class="glyphicon glyphicon-pencil"></span></button>
+      </form>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+</html>
