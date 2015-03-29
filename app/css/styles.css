@@ -1,0 +1,24 @@
+body {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.btn-main {
+  border-radius: 5px;
+}
+
+.form-main {
+  border-radius: 5px;
+}
+
+.label-main {
+  font-size: 20px;
+}
+
+.invalid-inline {
+  margin-left: -60px;
+}
+
+.valid-inline {
+  margin-left: -130px;
+}
